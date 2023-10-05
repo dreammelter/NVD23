@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://5sa78jwd48ig"]
+
+[ext_resource type="Texture2D" uid="uid://bfud285yo6fvn" path="res://assets/buch_scifi_platformer_16x.png" id="1_guu7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbks7"]
+size = Vector2(32, 8)
+
+[node name="PaddleBar" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rbks7")
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
+texture = ExtResource("1_guu7c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(144, 16, 16, 8)
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+texture = ExtResource("1_guu7c")
+region_enabled = true
+region_rect = Rect2(144, 64, 16, 8)

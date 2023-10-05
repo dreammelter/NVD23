@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ufvreqm7gdx"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfjecdswq1f0m" path="res://resources/block_sprite_frames.tres" id="1_ctuh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6w6o"]
+size = Vector2(16, 16)
+
+[node name="Block" type="Area2D"]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g6w6o")
+
+[node name="BlockCollection" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_ctuh3")
+animation = &"blue"

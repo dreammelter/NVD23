@@ -1,0 +1,8 @@
+[gd_resource type="Curve2D" format=3 uid="uid://tr4msisl2pg2"]
+
+[resource]
+resource_name = "paddle_path_curve"
+_data = {
+"points": PackedVector2Array(0, 0, 0, -64, -64, 16, 0, -64, 0.471405, 47.7297, 64, 16)
+}
+point_count = 2
