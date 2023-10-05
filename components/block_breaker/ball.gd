@@ -24,9 +24,9 @@ signal ball_lost(ball_id, is_super)
 @export var super_speed_multiplier := 1.5
 
 ## Use this for adjusting/calculating the damage to be dealt
-var _dmg_dealt: int
+var _dmg_dealt: int = base_attack_pt
 ## Use this for adjusting/calculating the ball's speed
-var _ball_speed: float
+var _ball_speed: float = base_speed
 
 ## Ball should go poof for whatever reason
 var _is_gone := false
@@ -35,9 +35,6 @@ var _is_gone := false
 
 
 func _ready() -> void:
-	_ball_speed = base_speed
-	_dmg_dealt = base_attack_pt
-	
 	# play the main anim
 	if not is_dangerous:
 		anim_sprite.play("safe_main")
@@ -49,6 +46,13 @@ func _physics_process(delta) -> void:
 	# Add the gravity.
 #	if not is_on_floor():
 #		velocity.y += gravity * delta
+	
+	# handle movement first
+	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+	
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+
 	pass
 
 
@@ -64,6 +68,7 @@ func launch(direction: Vector2) -> void:
 	prints("BALL: Direction received.", direction)
 	position = direction
 	velocity = Vector2(direction).normalized() * _ball_speed
+	prints("BALL: Velocty.", velocity)
 
 
 func destroy():

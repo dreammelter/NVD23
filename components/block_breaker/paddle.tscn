@@ -27,4 +27,4 @@ loop = false
 [node name="PaddleBar" parent="PaddlePath/PathFollower" instance=ExtResource("2_jmm7f")]
 
 [node name="CannonPoint" parent="PaddlePath/PathFollower" instance=ExtResource("3_v6p2r")]
-position = Vector2(8, -6)
+position = Vector2(0, -6)

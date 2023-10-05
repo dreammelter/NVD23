@@ -21,8 +21,8 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
 		var vph = get_viewport_rect().end.y
-		var usuable_area = vph - 10
-		var mouse_pos = remap(event.position.y, 0.0, usuable_area, 0.0, 1.0)
+		var usable_area = vph - 10
+		var mouse_pos = remap(event.position.y, 0.0, usable_area, 0.0, 1.0)
 		path_follower.progress_ratio = mouse_pos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
