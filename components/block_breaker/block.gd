@@ -1,5 +1,5 @@
 class_name Block
-extends Area2D
+extends StaticBody2D
 ## Block units for spawning.
 
 # the animations in the collection display in ABC order in the editor

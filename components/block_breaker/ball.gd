@@ -1,16 +1,18 @@
-class_name  Ball
+class_name Ball
 extends CharacterBody2D
 ## Ball class with manually implemented "physics"
 
 
 signal ball_lost(ball_id, is_super)
 
+@export_category("Status Flags")
 ## Did an enemy launch this ball?
 @export var is_dangerous := false
 
 ## Super Ball mode
 @export var is_super := false
 
+@export_group("Attack Data")
 # using integers to keep it simple
 ## base amount of damage the ball deals to blocks/enemies
 @export var base_attack_pt: int = 10
@@ -18,6 +20,7 @@ signal ball_lost(ball_id, is_super)
 ## How much more damage does going super do?
 @export var super_attack_multiplier := 2.0
 
+@export_group("Speed Settings")
 ## How fast should this thing move?
 @export var base_speed := 250.0
 ## How much faster should this thing move when super?
@@ -65,10 +68,9 @@ func _process(delta) -> void:
 # this'll do but I wonder how we get this info back into the physics process
 # maybe I should send this thru _ready and use signals or something?
 func launch(direction: Vector2) -> void:
-	prints("BALL: Direction received.", direction)
 	position = direction
 	velocity = Vector2(direction).normalized() * _ball_speed
-	prints("BALL: Velocty.", velocity)
+	prints("BALL: starting at", direction, "moving at", velocity)
 
 
 func destroy():

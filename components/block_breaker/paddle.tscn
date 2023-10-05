@@ -1,28 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6y2aiaelnj77"]
 
 [ext_resource type="Script" path="res://components/block_breaker/paddle.gd" id="1_d2jq7"]
+[ext_resource type="Curve2D" uid="uid://c0kerlg4acofa" path="res://resources/sandox_paddle_path.tres" id="2_gfugu"]
 [ext_resource type="PackedScene" uid="uid://c5f3m6n6lfg0o" path="res://components/block_breaker/paddle_bar.tscn" id="2_jmm7f"]
 [ext_resource type="PackedScene" uid="uid://bwytxnuxk7tei" path="res://components/block_breaker/cannon_point.tscn" id="3_v6p2r"]
-
-[sub_resource type="Curve2D" id="Curve2D_epv46"]
-resource_name = "paddle_path_curve"
-_data = {
-"points": PackedVector2Array(0, 0, 0, -64, -64, 16, 0, -64, 0.471405, 47.7297, 64, 16)
-}
-point_count = 2
 
 [node name="Paddle" type="Node2D"]
 script = ExtResource("1_d2jq7")
 
 [node name="PaddlePath" type="Path2D" parent="."]
-position = Vector2(-1.66893e-06, 0)
-scale = Vector2(0.75, 1)
-curve = SubResource("Curve2D_epv46")
+position = Vector2(-2.86102e-06, 0)
+scale = Vector2(0.875, 1)
+curve = ExtResource("2_gfugu")
 
 [node name="PathFollower" type="PathFollow2D" parent="PaddlePath"]
-position = Vector2(-64, 16)
-rotation = -1.5708
-loop = false
+position = Vector2(58.0582, -27.2593)
+rotation = 1.10672
+progress = 165.093
+cubic_interp = false
 
 [node name="PaddleBar" parent="PaddlePath/PathFollower" instance=ExtResource("2_jmm7f")]
 

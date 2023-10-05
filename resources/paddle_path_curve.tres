@@ -3,6 +3,6 @@
 [resource]
 resource_name = "paddle_path_curve"
 _data = {
-"points": PackedVector2Array(0, 0, 0, -64, -64, 16, 0, -64, 0.471405, 47.7297, 64, 16)
+"points": PackedVector2Array(-0.166667, 56, 0, -2, -48, 0, -48, 0, 48, 0, 0, -32, 0, -2, -0.333333, 56.125, 48, 0)
 }
-point_count = 2
+point_count = 3

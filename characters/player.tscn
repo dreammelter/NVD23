@@ -11,15 +11,14 @@ height = 32.0
 script = ExtResource("1_tnduw")
 metadata/_edit_group_ = true
 
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yvg7s")
+metadata/_edit_lock_ = true
+
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_s2pa3")
 animation = &"idle"
 autoplay = "idle"
 metadata/_edit_lock_ = true
 
-[node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_yvg7s")
-metadata/_edit_lock_ = true
-
 [node name="Paddle" parent="." instance=ExtResource("3_5v5sm")]
-position = Vector2(0, -8)

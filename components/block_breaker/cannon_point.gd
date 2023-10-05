@@ -8,16 +8,6 @@ extends Marker2D
 var BallScene = preload("res://components/block_breaker/ball.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 ## Testing function that doesn't consume ammo
 func test_fire() -> void:
 	var b = BallScene.instantiate()
