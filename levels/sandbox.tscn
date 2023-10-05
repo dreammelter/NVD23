@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://fdf4ebytjupy"]
+[gd_scene load_steps=4 format=3 uid="uid://fdf4ebytjupy"]
 
 [ext_resource type="TileSet" uid="uid://dwxombmuf8xlr" path="res://resources/pixel_adv_tileset.tres" id="1_6o0lv"]
 [ext_resource type="PackedScene" uid="uid://ds84qxkphasfw" path="res://characters/player.tscn" id="1_tissq"]
+[ext_resource type="PackedScene" uid="uid://b8ufvreqm7gdx" path="res://components/block_breaker/block.tscn" id="3_ncm3d"]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -27,3 +28,6 @@ position = Vector2(55, -80)
 
 [node name="RemoteTransform" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera")
+
+[node name="Block" parent="." instance=ExtResource("3_ncm3d")]
+position = Vector2(131, -131)

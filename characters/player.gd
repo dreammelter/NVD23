@@ -18,6 +18,7 @@ var _jump_count: int = 0
 
 @onready var animated_sprite = $AnimatedSprite as AnimatedSprite2D
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
@@ -49,6 +50,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("idle")
 
 	move_and_slide()
+
 
 ## Flips the animated sprite and emits a signal when direction changes
 func _change_anim_direction(direction: float) -> void:

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8ufvreqm7gdx"]
+[gd_scene load_steps=4 format=3 uid="uid://b8ufvreqm7gdx"]
 
 [ext_resource type="SpriteFrames" uid="uid://bfjecdswq1f0m" path="res://resources/block_sprite_frames.tres" id="1_ctuh3"]
+[ext_resource type="Script" path="res://components/block_breaker/block.gd" id="1_q41g0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6w6o"]
 size = Vector2(16, 16)
 
 [node name="Block" type="Area2D"]
+script = ExtResource("1_q41g0")
+metadata/_edit_group_ = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g6w6o")
