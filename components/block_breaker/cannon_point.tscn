@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwytxnuxk7tei"]
 
-[ext_resource type="Script" path="res://components/block_breaker/cannon_point.gd" id="1_t1s7b"]
+[ext_resource type="Script" path="res://components/block_breaker/scripts/cannon_point.gd" id="1_sj3kc"]
 [ext_resource type="Texture2D" uid="uid://24ek36pvgngg" path="res://assets/ui/crosshair177.png" id="2_sid41"]
 
 [node name="CannonPoint" type="Marker2D"]
 gizmo_extents = 20.0
-script = ExtResource("1_t1s7b")
+script = ExtResource("1_sj3kc")
 
 [node name="Crosshair" type="Sprite2D" parent="."]
 modulate = Color(0.698039, 1, 0.698039, 1)
-position = Vector2(0, -5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_sid41")

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://db8oyje2e64ss"]
 
 [ext_resource type="SpriteFrames" uid="uid://c86ivg4v7lojn" path="res://resources/ball_sprite_frames.tres" id="1_jcpl5"]
-[ext_resource type="Script" path="res://components/block_breaker/ball.gd" id="1_mlgp1"]
+[ext_resource type="Script" path="res://components/block_breaker/scripts/ball.gd" id="1_so5ye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnf51"]
 radius = 6.0
 
 [node name="Ball" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_mlgp1")
+script = ExtResource("1_so5ye")
 
 [node name="VizOnScreenNoti" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, 4.17233e-07)

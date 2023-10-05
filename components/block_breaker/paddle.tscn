@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6y2aiaelnj77"]
 
-[ext_resource type="Script" path="res://components/block_breaker/paddle.gd" id="1_d2jq7"]
+[ext_resource type="Script" path="res://components/block_breaker/scripts/paddle.gd" id="1_d2jq7"]
 [ext_resource type="Curve2D" uid="uid://c0kerlg4acofa" path="res://resources/sandox_paddle_path.tres" id="2_gfugu"]
 [ext_resource type="PackedScene" uid="uid://c5f3m6n6lfg0o" path="res://components/block_breaker/paddle_bar.tscn" id="2_jmm7f"]
 [ext_resource type="PackedScene" uid="uid://bwytxnuxk7tei" path="res://components/block_breaker/cannon_point.tscn" id="3_v6p2r"]
