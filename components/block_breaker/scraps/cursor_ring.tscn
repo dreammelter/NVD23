@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cehs6g6dhanqf"]
+
+[ext_resource type="Script" path="res://components/block_breaker/scripts/cursor_ring.gd" id="1_jfjxc"]
+[ext_resource type="PackedScene" uid="uid://c5f3m6n6lfg0o" path="res://components/block_breaker/scraps/paddle_bar.tscn" id="2_jhest"]
+[ext_resource type="PackedScene" uid="uid://dn63aartbv7u7" path="res://components/block_breaker/scraps/cursor_temp.tscn" id="2_veike"]
+[ext_resource type="PackedScene" uid="uid://bwytxnuxk7tei" path="res://components/block_breaker/cannon_point.tscn" id="4_pip63"]
+
+[node name="CursorRing" type="Node2D"]
+script = ExtResource("1_jfjxc")
+
+[node name="Cursor" parent="." instance=ExtResource("2_veike")]
+
+[node name="PaddleBar" parent="Cursor" instance=ExtResource("2_jhest")]
+position = Vector2(160, 0)
+rotation = 1.5708
+scale = Vector2(5, 5)
+
+[node name="CannonPoint" parent="Cursor" instance=ExtResource("4_pip63")]
+position = Vector2(200, 0)
+rotation = 1.5708
+scale = Vector2(1, 1)

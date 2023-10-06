@@ -8,6 +8,8 @@ radius = 6.0
 
 [node name="Ball" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+slide_on_ceiling = false
+floor_stop_on_slope = false
 script = ExtResource("1_so5ye")
 
 [node name="VizOnScreenNoti" type="VisibleOnScreenNotifier2D" parent="."]
