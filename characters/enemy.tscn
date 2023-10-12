@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkvtkwk0egnv2"]
 
-[ext_resource type="Script" path="res://characters/enemy.gd" id="1_j28qy"]
+[ext_resource type="Script" path="res://characters/scripts/enemy.gd" id="1_jev7n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7f7d"]
 resource_local_to_scene = true
@@ -23,7 +23,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_j28qy")
+script = ExtResource("1_jev7n")
 metadata/_edit_group_ = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]

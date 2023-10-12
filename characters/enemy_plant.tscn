@@ -14,5 +14,4 @@ shape = SubResource("RectangleShape2D_430p7")
 
 [node name="AnimatedSprite" parent="." index="1"]
 sprite_frames = ExtResource("2_28syg")
-animation = &"idle"
-autoplay = "idle"
+animation = &"attack"
