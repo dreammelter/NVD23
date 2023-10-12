@@ -64,8 +64,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animated_sprite.play("idle")
-
+	
 	move_and_slide()
+	
+	# Handle Collisions
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		_handle_collisions(collision)
 
 
 ## Flips the animated sprite and emits a signal when direction changes
@@ -77,5 +82,9 @@ func _change_anim_direction(direction: float) -> void:
 	
 	emit_signal("direction_changed", direction)
 
+
+## Collision Handler - dunno what it returns yet... if anything
+func _handle_collisions(collision: KinematicCollision2D) -> void:
+	print("PLAYER collided with ", collision.get_collider().name)
 
 ## Adjust candy bar meter + activate super if it's maxed

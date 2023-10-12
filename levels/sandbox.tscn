@@ -19,11 +19,14 @@ layer_0/tile_data = PackedInt32Array(11, 131072, 2, -65525, 131072, 1, -131061, 
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(55, -80)
-offset = Vector2(56, -16)
+offset = Vector2(56, -8)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.75
+drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -35,12 +38,20 @@ remote_path = NodePath("../../Camera")
 
 [node name="EnemyChicken" parent="." instance=ExtResource("6_yj3sx")]
 position = Vector2(155, -81)
+collision_layer = 2
+collision_mask = 1
 
 [node name="EnemyPlant" parent="." instance=ExtResource("5_ovkd0")]
 position = Vector2(-179, 91)
+collision_layer = 2
+collision_mask = 1
 
 [node name="EnemyShroom" parent="." instance=ExtResource("6_vb4wa")]
 position = Vector2(-569, -32)
+collision_layer = 2
+collision_mask = 1
 
 [node name="EnemySkull" parent="." instance=ExtResource("7_8tgvb")]
 position = Vector2(-967, 125)
+collision_layer = 2
+collision_mask = 1
