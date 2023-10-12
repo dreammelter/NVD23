@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt7rpacsvkjqn"]
+
+[ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_i1uds"]
+[ext_resource type="SpriteFrames" uid="uid://dvj6m60w6k8qp" path="res://resources/enemy_skull_sprite_frames.tres" id="2_5n5rx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldjna"]
+radius = 25.0
+
+[node name="EnemySkull" instance=ExtResource("1_i1uds")]
+
+[node name="Collider" parent="." index="0"]
+shape = SubResource("CircleShape2D_ldjna")
+
+[node name="AnimatedSprite" parent="." index="1"]
+sprite_frames = ExtResource("2_5n5rx")
+animation = &"hit"
+autoplay = "idle_shield"
+frame = 4
+frame_progress = 1.0

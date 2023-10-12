@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmxq3fvd0juja"]
+
+[ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_1cmhj"]
+[ext_resource type="SpriteFrames" uid="uid://f0ldj5tnmpqt" path="res://resources/enemy_chicken_sprite_frames.tres" id="1_fykrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnib2"]
+size = Vector2(29, 33)
+
+[node name="EnemyChicken" instance=ExtResource("1_1cmhj")]
+
+[node name="Collider" parent="." index="0"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_xnib2")
+
+[node name="AnimatedSprite" parent="." index="1"]
+sprite_frames = ExtResource("1_fykrh")
+animation = &"idle"

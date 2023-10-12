@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkvtkwk0egnv2"]
+
+[ext_resource type="Script" path="res://characters/enemy.gd" id="1_j28qy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7f7d"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_j28qy")
+metadata/_edit_group_ = true
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s7f7d")
+animation = &"run"
+autoplay = "idle"
