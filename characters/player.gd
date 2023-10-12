@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 ## Emitted when the animated sprite flips its horizontal direction
 signal direction_changed(direction: float)
+## Emitted when a stat (Candy, Super Mode) is updated
+signal stat_changed(stat_name: String, stat_value: float)
 
 const SPEED := 200.0
 const JUMP_VELOCITY := -400.0
@@ -16,15 +18,27 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var _jump_count: int = 0
 
+# A power bar sort of doubling as health
+var _candy: float = 0.0
+
+# Maxed candy bar?
+var _is_super := false
+
 @onready var animated_sprite = $AnimatedSprite as AnimatedSprite2D
+
+
+func _ready():
+	pass
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
+#		print("PLAYER is in air")
 		velocity.y += gravity * delta
 		# play falling animation
 		if animated_sprite.animation == "dbl_jump" and not animated_sprite.is_playing():
+			print("PLAYER is falling")
 			animated_sprite.play("fall")
 	else:
 		# reset jump count when we land on the ground
@@ -35,8 +49,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		_jump_count += 1
 		if _jump_count > 1:
+			print("PLAYER is double jumping!")
 			animated_sprite.play("dbl_jump")
 		else:
+			print("PLAYER is jumping!")
 			animated_sprite.play("jump")
 
 	# Get the input direction and handle the movement/deceleration.
@@ -60,3 +76,6 @@ func _change_anim_direction(direction: float) -> void:
 		animated_sprite.flip_h = true
 	
 	emit_signal("direction_changed", direction)
+
+
+## Adjust candy bar meter + activate super if it's maxed

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds84qxkphasfw"]
+[gd_scene load_steps=5 format=3 uid="uid://ds84qxkphasfw"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_tnduw"]
 [ext_resource type="SpriteFrames" uid="uid://c43u1y0kp5uyw" path="res://resources/player_sprite_frames.tres" id="2_s2pa3"]
 [ext_resource type="PackedScene" uid="uid://bwytxnuxk7tei" path="res://components/block_breaker/cannon_point.tscn" id="3_t1t3n"]
-[ext_resource type="PackedScene" uid="uid://vrcabtyar02" path="res://components/block_breaker/gravity_shield.tscn" id="4_6wni1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yvg7s"]
 height = 32.0
@@ -24,6 +23,3 @@ metadata/_edit_lock_ = true
 
 [node name="CannonPoint" parent="." instance=ExtResource("3_t1t3n")]
 visible = false
-
-[node name="GravityShield" parent="." instance=ExtResource("4_6wni1")]
-gravity_space_override = 2
