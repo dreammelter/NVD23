@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 ## Main class for controlling the player character.
 ## 
-## Manages movement and related animations.
+## Manages movement, collisions, stats, and related animations.
 
 ## Emitted when the animated sprite flips its horizontal direction
 signal direction_changed(direction: float)
@@ -49,10 +49,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		_jump_count += 1
 		if _jump_count > 1:
-			print("PLAYER is double jumping!")
+#			print("PLAYER is double jumping!")
 			animated_sprite.play("dbl_jump")
 		else:
-			print("PLAYER is jumping!")
+#			print("PLAYER is jumping!")
 			animated_sprite.play("jump")
 
 	# Get the input direction and handle the movement/deceleration.
@@ -66,11 +66,12 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("idle")
 	
 	move_and_slide()
-	
-	# Handle Collisions
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		_handle_collisions(collision)
+	_handle_collisions()
+
+
+## Take damage from collisions with enemies and level hazards
+func hit() -> void:
+	print("We've been hit!")
 
 
 ## Flips the animated sprite and emits a signal when direction changes
@@ -83,8 +84,17 @@ func _change_anim_direction(direction: float) -> void:
 	emit_signal("direction_changed", direction)
 
 
-## Collision Handler - dunno what it returns yet... if anything
-func _handle_collisions(collision: KinematicCollision2D) -> void:
-	print("PLAYER collided with ", collision.get_collider().name)
+## Sort through collisions and set off reactions as necessary
+func _handle_collisions() -> void:
+	for i in get_slide_collision_count():
+#		var collision = get_slide_collision(i)
+		var collider = get_slide_collision(i).get_collider()
+		
+		if not collider.is_class("TileMap"):
+			print("PLAYER collided with ", collider.name)
+		
+#		if collider.is_in_group("enemies"):
+#			print("HELLO????")
+#			collider.hit()
 
 ## Adjust candy bar meter + activate super if it's maxed

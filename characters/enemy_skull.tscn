@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt7rpacsvkjqn"]
+[gd_scene load_steps=5 format=3 uid="uid://bt7rpacsvkjqn"]
 
 [ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_i1uds"]
 [ext_resource type="SpriteFrames" uid="uid://dvj6m60w6k8qp" path="res://resources/enemy_skull_sprite_frames.tres" id="2_5n5rx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ldjna"]
 radius = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uce0v"]
+size = Vector2(25, 22)
 
 [node name="EnemySkull" instance=ExtResource("1_i1uds")]
 
@@ -13,7 +16,10 @@ shape = SubResource("CircleShape2D_ldjna")
 
 [node name="AnimatedSprite" parent="." index="1"]
 sprite_frames = ExtResource("2_5n5rx")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle_shield"
-frame = 4
-frame_progress = 1.0
+
+[node name="HitShape" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_uce0v")
+debug_color = Color(0.997589, 0.00548695, 0.146562, 0.42)

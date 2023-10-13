@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://lmnxq62cee4x"]
+[gd_scene load_steps=5 format=3 uid="uid://lmnxq62cee4x"]
 
 [ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_uy3ws"]
 [ext_resource type="SpriteFrames" uid="uid://cvbnepfaeffco" path="res://resources/enemy_plant_sprite_frames.tres" id="2_28syg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_430p7"]
 size = Vector2(28, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ao8a"]
+size = Vector2(28, 16)
 
 [node name="EnemyPlant" instance=ExtResource("1_uy3ws")]
 
@@ -14,4 +17,9 @@ shape = SubResource("RectangleShape2D_430p7")
 
 [node name="AnimatedSprite" parent="." index="1"]
 sprite_frames = ExtResource("2_28syg")
-animation = &"attack"
+animation = &"idle"
+
+[node name="HitShape" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(3, -6)
+shape = SubResource("RectangleShape2D_8ao8a")
+debug_color = Color(0.997589, 0.00548695, 0.146562, 0.42)

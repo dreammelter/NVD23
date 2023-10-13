@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmxq3fvd0juja"]
+[gd_scene load_steps=5 format=3 uid="uid://cmxq3fvd0juja"]
 
 [ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_1cmhj"]
 [ext_resource type="SpriteFrames" uid="uid://f0ldj5tnmpqt" path="res://resources/enemy_chicken_sprite_frames.tres" id="1_fykrh"]
@@ -6,7 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnib2"]
 size = Vector2(29, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65als"]
+size = Vector2(25, 18)
+
 [node name="EnemyChicken" instance=ExtResource("1_1cmhj")]
+speed = 100.0
+jump_velocity = -350.0
 
 [node name="Collider" parent="." index="0"]
 position = Vector2(-0.5, 0.5)
@@ -14,3 +19,9 @@ shape = SubResource("RectangleShape2D_xnib2")
 
 [node name="AnimatedSprite" parent="." index="1"]
 sprite_frames = ExtResource("1_fykrh")
+animation = &"idle"
+
+[node name="HitShape" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0.5, -7)
+shape = SubResource("RectangleShape2D_65als")
+debug_color = Color(0.996078, 0.00392157, 0.145098, 0.419608)

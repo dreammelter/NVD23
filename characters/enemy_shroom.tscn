@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cnvx06eam2w51"]
+[gd_scene load_steps=43 format=3 uid="uid://cnvx06eam2w51"]
 
 [ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_wdccf"]
 [ext_resource type="Texture2D" uid="uid://do1qs7786e7im" path="res://assets/pixel_adv_32x/Enemies/Mushroom/Hit.png" id="2_khmrq"]
@@ -273,6 +273,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f62cl"]
+size = Vector2(26, 13)
+
 [node name="EnemyShroom" instance=ExtResource("1_wdccf")]
 
 [node name="Collider" parent="." index="0"]
@@ -283,3 +286,8 @@ shape = SubResource("RectangleShape2D_gym6e")
 sprite_frames = SubResource("SpriteFrames_7yesw")
 animation = &"idle"
 frame_progress = 0.660378
+
+[node name="HitShape" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_f62cl")
+debug_color = Color(0.997589, 0.00548695, 0.146562, 0.42)
