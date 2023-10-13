@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckdar7bg1uxct"]
+
+[ext_resource type="Script" path="res://components/stats_tools/hit_box.gd" id="1_detwo"]
+
+[node name="HitBox" type="Area2D"]
+editor_description = "Dedicated Area for easy detection of collision with various game objects."
+script = ExtResource("1_detwo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
