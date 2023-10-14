@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://6gh52hjvl8a5"]
+
+[ext_resource type="PackedScene" uid="uid://totjy5snyt4u" path="res://components/collectibles/collectible.tscn" id="1_caacv"]
+[ext_resource type="Texture2D" uid="uid://cpsh6d3xqcgpb" path="res://assets/fx/bdragon1727/fire_bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="2_rjqhb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mb8s1"]
+radius = 8.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g76i"]
+atlas = ExtResource("2_rjqhb")
+region = Rect2(256, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vadrk"]
+atlas = ExtResource("2_rjqhb")
+region = Rect2(272, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usvs7"]
+atlas = ExtResource("2_rjqhb")
+region = Rect2(288, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcsdo"]
+atlas = ExtResource("2_rjqhb")
+region = Rect2(304, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rotj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g76i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vadrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usvs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcsdo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bubble" instance=ExtResource("1_caacv")]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_mb8s1")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_rotj0")
+frame = 3
+frame_progress = 0.629449

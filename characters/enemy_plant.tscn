@@ -10,6 +10,7 @@ size = Vector2(28, 35)
 size = Vector2(28, 16)
 
 [node name="EnemyPlant" instance=ExtResource("1_uy3ws")]
+damage_dealt = 20
 
 [node name="Collider" parent="." index="0"]
 position = Vector2(3, 3.5)

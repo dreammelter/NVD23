@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fdf4ebytjupy"]
+[gd_scene load_steps=11 format=3 uid="uid://fdf4ebytjupy"]
 
 [ext_resource type="TileSet" uid="uid://dwxombmuf8xlr" path="res://resources/pixel_adv_tileset.tres" id="1_6o0lv"]
 [ext_resource type="PackedScene" uid="uid://ds84qxkphasfw" path="res://characters/player.tscn" id="1_tissq"]
@@ -7,6 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://cnvx06eam2w51" path="res://characters/enemy_shroom.tscn" id="6_vb4wa"]
 [ext_resource type="PackedScene" uid="uid://cmxq3fvd0juja" path="res://characters/enemy_chicken.tscn" id="6_yj3sx"]
 [ext_resource type="PackedScene" uid="uid://bt7rpacsvkjqn" path="res://characters/enemy_skull.tscn" id="7_8tgvb"]
+[ext_resource type="PackedScene" uid="uid://bcst323xia8sv" path="res://components/collectibles/coin_tool.tscn" id="8_4okfd"]
+
+[sub_resource type="Curve2D" id="Curve2D_rvm57"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 47, 270, 0, 0, 0, 0, 276, 272)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_p11eg"]
+_data = {
+"points": PackedVector2Array(1.19055, 21.8268, -1.19055, -21.8268, -636, 314, -67.0677, -7.1433, 67.0677, 7.1433, -534, 212, -68.6551, -0.396851, 68.6551, 0.396851, -392, 313, -15.874, 23.811, 15.874, -23.811, -333, 212)
+}
+point_count = 4
 
 [node name="Sandbox" type="Node2D"]
 script = ExtResource("1_yxh7b")
@@ -19,8 +32,12 @@ layer_0/tile_data = PackedInt32Array(11, 131072, 2, -65525, 131072, 1, -131061, 
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(55, -80)
-offset = Vector2(56, -8)
+offset = Vector2(56, 0)
 zoom = Vector2(2.5, 2.5)
+limit_left = -3000
+limit_top = -3000
+limit_right = 3000
+limit_bottom = 3000
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -41,6 +58,7 @@ collision_mask = 1
 position = Vector2(-967, 125)
 collision_layer = 2
 collision_mask = 1
+damage_dealt = 50
 
 [node name="EnemyPlant" parent="Enemies" instance=ExtResource("5_ovkd0")]
 position = Vector2(-179, 91)
@@ -57,3 +75,29 @@ position = Vector2(55, -80)
 
 [node name="RemoteTransform" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="CoinPath" parent="Coins" instance=ExtResource("8_4okfd")]
+position = Vector2(-1, 40)
+curve = SubResource("Curve2D_rvm57")
+
+[node name="CoinPath2" parent="Coins" instance=ExtResource("8_4okfd")]
+position = Vector2(5, 13)
+curve = SubResource("Curve2D_p11eg")
+count = 10
+
+[connection signal="item_collected" from="Player" to="." method="_on_player_item_collected"]
+[connection signal="body_entered" from="Coins/CoinPath/Coin" to="Coins/CoinPath/Coin" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath/@Area2D@265054" to="Coins/CoinPath/@Area2D@265054" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath/@Area2D@265055" to="Coins/CoinPath/@Area2D@265055" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/Coin" to="Coins/CoinPath2/Coin" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265057" to="Coins/CoinPath2/@Area2D@265057" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265058" to="Coins/CoinPath2/@Area2D@265058" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265059" to="Coins/CoinPath2/@Area2D@265059" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265060" to="Coins/CoinPath2/@Area2D@265060" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265061" to="Coins/CoinPath2/@Area2D@265061" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265062" to="Coins/CoinPath2/@Area2D@265062" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265063" to="Coins/CoinPath2/@Area2D@265063" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265064" to="Coins/CoinPath2/@Area2D@265064" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@265065" to="Coins/CoinPath2/@Area2D@265065" method="_on_body_entered" flags=18]

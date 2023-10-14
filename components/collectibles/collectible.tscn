@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://totjy5snyt4u"]
+
+[ext_resource type="Script" path="res://components/collectibles/collectible.gd" id="1_t70xi"]
+
+[node name="Collectible" type="Area2D"]
+collision_mask = 7
+script = ExtResource("1_t70xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0, 1, 0.352941, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

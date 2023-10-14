@@ -8,6 +8,8 @@ extends CharacterBody2D
 signal direction_changed(direction: float)
 ## Emitted when a stat (Candy, Super Mode) is updated
 signal stat_changed(stat_name: String, stat_value: float)
+## Emitted when the player encounters a collectible
+signal item_collected(item_type)
 
 const SPEED := 200.0
 const JUMP_VELOCITY := -400.0
@@ -18,10 +20,10 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var _jump_count: int = 0
 
-# A power bar sort of doubling as health
-var _candy: float = 0.0
+## A power bar sort of doubling as health
+var _juice: int = 0
 
-# Maxed candy bar?
+## Juice is maxed or invincible power-up collected
 var _is_super := false
 
 @onready var animated_sprite = $AnimatedSprite as AnimatedSprite2D
@@ -69,9 +71,25 @@ func _physics_process(delta: float) -> void:
 	_handle_collisions()
 
 
-## Take damage from collisions with enemies and level hazards
-func hit() -> void:
+## Lose juice when colliding with enemies and level hazards
+## Return value indicates if stat is at zero
+func hit(amount: int) -> bool:
 	print("We've been hit!")
+	_juice -= amount
+	if _juice < 0:
+		_juice = 0
+		return true
+	return false
+
+
+## Adjust juice bar meter + activate super if it's maxed.
+## Return value indicates if stat is maxed
+func charge(amount: int) -> bool:
+	_juice += amount
+	if _juice > 100:
+		_juice = 100
+		return true
+	return false
 
 
 ## Flips the animated sprite and emits a signal when direction changes
@@ -96,5 +114,3 @@ func _handle_collisions() -> void:
 #		if collider.is_in_group("enemies"):
 #			print("HELLO????")
 #			collider.hit()
-
-## Adjust candy bar meter + activate super if it's maxed

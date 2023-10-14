@@ -10,6 +10,7 @@ size = Vector2(29, 33)
 size = Vector2(25, 18)
 
 [node name="EnemyChicken" instance=ExtResource("1_1cmhj")]
+damage_dealt = 15
 speed = 100.0
 jump_velocity = -350.0
 

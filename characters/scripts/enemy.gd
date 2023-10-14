@@ -2,7 +2,14 @@ class_name Enemy
 extends CharacterBody2D
 ## Base Enemy class for easy creation and management.
 
-## General physics details
+
+## Juice bar (which doubles as health)
+@export var juice: int = 0
+
+## How much damage the enemy deal?
+@export var damage_dealt: int = 10
+
+# General physics details
 @export var speed := 200.0
 @export var jump_velocity := -400.0
 
@@ -18,9 +25,25 @@ func _physics_process(delta):
 #	_handle_collisons()
 
 
-## basic hit method to be overriden as needed
-func hit() -> void:
+## Basic hit method to be overriden as needed
+## Return value indicates if stat is at zero
+func hit(amount: int) -> bool:
 	print("Enemy has been hit!")
+	juice -= amount
+	if juice < 0:
+		juice = 0
+		return true
+	return false
+
+
+## Adjust Juice bar when collecting fruit (or using booster)
+## Return value indicates if stat is maxed
+func charge(amount: int) -> bool:
+	juice += amount
+	if juice > 100:
+		juice = 100
+		return true
+	return false
 
 
 ## Handle regular collisions - which... isn't consistently working rn.
@@ -31,12 +54,13 @@ func hit() -> void:
 #			collider.hit()
 
 
+## Currently misused to deal damage to the player... for testing.
 func _on_hit_box_body_entered(body):
 	# figure out what came in
 	# determine how to respond
 	prints("HITBOX encountered", body.name)
 	if body.name == "Player":
-		hit()
+		hit(damage_dealt)
 
 
 ## Wandering method used for testing
