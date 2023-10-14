@@ -1,6 +1,7 @@
-[gd_scene load_steps=148 format=3 uid="uid://cup64f7kcou6d"]
+[gd_scene load_steps=149 format=3 uid="uid://cup64f7kcou6d"]
 
 [ext_resource type="PackedScene" uid="uid://totjy5snyt4u" path="res://components/collectibles/collectible.tscn" id="1_tc81x"]
+[ext_resource type="Script" path="res://components/collectibles/fruit.gd" id="2_5jwo5"]
 [ext_resource type="Texture2D" uid="uid://b2u20bbbs56xn" path="res://assets/pixel_adv_32x/Items/Fruits/Apple.png" id="2_tfln6"]
 [ext_resource type="Texture2D" uid="uid://c0tgf545yqx07" path="res://assets/pixel_adv_32x/Items/Fruits/Bananas.png" id="3_7cmb8"]
 [ext_resource type="Texture2D" uid="uid://dmyou7tg4ve6c" path="res://assets/pixel_adv_32x/Items/Fruits/Cherries.png" id="4_dxvev"]
@@ -1012,6 +1013,9 @@ animations = [{
 [node name="Fruit" groups=["fruits"] instance=ExtResource("1_tc81x")]
 collision_layer = 16
 collision_mask = 6
+script = ExtResource("2_5jwo5")
+pick_random_fruit = true
+fruit = ""
 item_type = "fruit"
 
 [node name="CollisionShape2D" parent="." index="0"]

@@ -9,3 +9,7 @@ script = ExtResource("1_fos20")
 position = Vector2(43, 271)
 rotation = -0.00888865
 loop = false
+
+[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="@Area2D@338456" to="@Area2D@338456" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="@Area2D@338457" to="@Area2D@338457" method="_on_body_entered" flags=18]

@@ -15,6 +15,10 @@ const SPEED := 200.0
 const JUMP_VELOCITY := -400.0
 const MAX_JUMP_COUNT: int = 2
 
+## Coins collected across all levels. 
+## Static means it should be present across all instances of the player.
+static var coins: int = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -90,6 +94,11 @@ func charge(amount: int) -> bool:
 		_juice = 100
 		return true
 	return false
+
+
+## Update coin count
+func bank(amount: int) -> void:
+	coins += amount
 
 
 ## Flips the animated sprite and emits a signal when direction changes
