@@ -13,7 +13,7 @@ config_version=5
 config/name="NVD23"
 config/description="Completed prototype project for the NV Day Workshop - Speedrun"
 config/tags=PackedStringArray("mine", "prototype")
-run/main_scene="res://levels/sandbox.tscn"
+run/main_scene="res://screens/title_screen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 

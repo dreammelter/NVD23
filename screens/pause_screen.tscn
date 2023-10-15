@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://cnf80hgfdkwu0"]
+[gd_scene load_steps=6 format=3 uid="uid://cnf80hgfdkwu0"]
+
+[ext_resource type="Script" path="res://screens/scripts/pause_screen.gd" id="1_3ioud"]
+[ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="1_wstgx"]
+[ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="2_u11rh"]
+[ext_resource type="PackedScene" uid="uid://dk22ecgbvbckw" path="res://screens/pieces/settings_button.tscn" id="3_n0lsx"]
+[ext_resource type="Texture2D" uid="uid://kilfc5f4nuw3" path="res://assets/pixel_adv_32x/Menu/Buttons/Back.png" id="4_wn5id"]
 
 [node name="PauseScreen" type="ColorRect"]
 anchors_preset = 15
@@ -7,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.470588, 0.407843, 0.431373, 0.623529)
+script = ExtResource("1_3ioud")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -21,3 +28,40 @@ offset_right = 225.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinDisplay" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_u11rh")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+alignment = 1
+
+[node name="close_button" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wstgx")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "Save game"
+
+[node name="ExitGameButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit to Main Menu"
+icon = ExtResource("4_wn5id")
+expand_icon = true
+
+[node name="SettingsButton" parent="PanelContainer/VBoxContainer" instance=ExtResource("3_n0lsx")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/close_button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnnsgva2e5d6v"]
+[gd_scene load_steps=9 format=3 uid="uid://dnnsgva2e5d6v"]
 
 [ext_resource type="Texture2D" uid="uid://babh0j8wnqp24" path="res://assets/pixel_adv_32x/Background/Blue.png" id="1_chpjj"]
+[ext_resource type="Script" path="res://screens/scripts/main_menu.gd" id="2_1mtxi"]
 [ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="2_85agn"]
 [ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="3_kx0m2"]
 [ext_resource type="PackedScene" uid="uid://ds84qxkphasfw" path="res://characters/player.tscn" id="4_27y1r"]
@@ -17,6 +18,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_chpjj")
 stretch_mode = 1
+script = ExtResource("2_1mtxi")
+scene_file = "res://levels/sandbox.tscn"
 metadata/_edit_lock_ = true
 
 [node name="close_button" parent="." instance=ExtResource("2_85agn")]
@@ -73,3 +76,8 @@ size_flags_vertical = 3
 [node name="SettingsButton" parent="VBoxContainer" instance=ExtResource("6_riat7")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
