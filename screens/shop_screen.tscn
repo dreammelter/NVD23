@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwrt8y3r6lwga"]
+
+[ext_resource type="Texture2D" uid="uid://btwikdaao6fh2" path="res://assets/pixel_adv_32x/Background/Green.png" id="1_ao2qw"]
+[ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="2_phv20"]
+[ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="2_rk8eo"]
+
+[node name="ShopScreen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2qw")
+stretch_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 25.0
+offset_right = 38.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Shop"
+uppercase = true
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CoinDisplay" parent="." instance=ExtResource("2_phv20")]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 25.0
+offset_right = 476.0
+offset_bottom = 62.0
+
+[node name="close_button" parent="." instance=ExtResource("2_rk8eo")]
+layout_mode = 0
+anchors_preset = 0

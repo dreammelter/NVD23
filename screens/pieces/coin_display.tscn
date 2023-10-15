@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7u27i4juhay"]
+
+[ext_resource type="Texture2D" uid="uid://cu6h23nn0y6dp" path="res://assets/Coin (16 x 16).png" id="1_r522j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu624"]
+atlas = ExtResource("1_r522j")
+region = Rect2(0, 0, 16, 16)
+
+[node name="CoinDisplay" type="HBoxContainer"]
+offset_right = 165.0
+offset_bottom = 37.0
+
+[node name="CoinIcon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_lu624")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Amount" type="Label" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "0"

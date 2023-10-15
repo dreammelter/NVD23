@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6cit5d5svgy1"]
+
+[ext_resource type="Texture2D" uid="uid://dpmwu0tl68dg0" path="res://assets/pixel_adv_32x/Menu/Buttons/Levels.png" id="1_wvgoq"]
+
+[node name="ShopButton" type="Button"]
+custom_minimum_size = Vector2(64, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Shop"
+icon = ExtResource("1_wvgoq")
+flat = true
+expand_icon = true

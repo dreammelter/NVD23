@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2sixm0lism7f"]
+
+[ext_resource type="Texture2D" uid="uid://i5lrlso14yy2" path="res://assets/pixel_adv_32x/Menu/Buttons/Play.png" id="1_j0j7d"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_xrnnb"]
+action = &"start"
+
+[sub_resource type="Shortcut" id="Shortcut_wt7sa"]
+events = [SubResource("InputEventAction_xrnnb")]
+
+[node name="PlayButton" type="Button"]
+custom_minimum_size = Vector2(64, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+shortcut = SubResource("Shortcut_wt7sa")
+text = "Play"
+icon = ExtResource("1_j0j7d")
+flat = true
+expand_icon = true

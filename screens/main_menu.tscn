@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnnsgva2e5d6v"]
+
+[ext_resource type="Texture2D" uid="uid://babh0j8wnqp24" path="res://assets/pixel_adv_32x/Background/Blue.png" id="1_chpjj"]
+[ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="2_85agn"]
+[ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="3_kx0m2"]
+[ext_resource type="PackedScene" uid="uid://ds84qxkphasfw" path="res://characters/player.tscn" id="4_27y1r"]
+[ext_resource type="PackedScene" uid="uid://b2sixm0lism7f" path="res://screens/pieces/play_button.tscn" id="5_c3uo7"]
+[ext_resource type="PackedScene" uid="uid://b6cit5d5svgy1" path="res://screens/pieces/shop_button.tscn" id="6_k1n52"]
+[ext_resource type="PackedScene" uid="uid://dk22ecgbvbckw" path="res://screens/pieces/settings_button.tscn" id="6_riat7"]
+
+[node name="MainMenu" type="TextureRect"]
+self_modulate = Color(0.592157, 0.839216, 1, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_chpjj")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="close_button" parent="." instance=ExtResource("2_85agn")]
+layout_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_top = 12.0
+offset_right = 39.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Menu"
+
+[node name="CoinDisplay" parent="." instance=ExtResource("3_kx0m2")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 192.0
+offset_right = 374.0
+offset_bottom = 229.0
+
+[node name="Player" parent="." instance=ExtResource("4_27y1r")]
+position = Vector2(256, 336)
+scale = Vector2(5, 5)
+script = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = -164.0
+offset_right = 349.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource("5_c3uo7")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopButton" parent="VBoxContainer" instance=ExtResource("6_k1n52")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsButton" parent="VBoxContainer" instance=ExtResource("6_riat7")]
+layout_mode = 2
+size_flags_vertical = 3
