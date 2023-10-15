@@ -15,11 +15,10 @@ signal state_changed(state_name)
 
 
 # Setup the State Machine
-func _ready() -> void:
+func _enter_tree() -> void:
 	if current_state == null:
 		push_warning("hey-- you don't have a state")
-	# wait until parent node is ready
-	current_state.enter
+	current_state.enter()
 
 
 # Game loop hooks to delegate

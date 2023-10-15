@@ -11,7 +11,8 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	prints(body.name,"picked up {i}!".format({"i":item_type}))
 	
-	body.item_collected.emit(item_type)
+	if body.has_signal("item_collected"):
+		body.item_collected.emit(item_type)
 	
 	if item_type == "fruit":
 		# if body.charge returns true, leave the fruit

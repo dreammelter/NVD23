@@ -9,14 +9,15 @@ signal direction_changed(direction: float)
 ## Emitted when a stat (Candy, Super Mode) is updated
 signal stat_changed(stat_name: String, stat_value: float)
 ## Emitted when the player encounters a collectible
-signal item_collected(item_type)
+signal item_collected(item_type: String)
 
 const SPEED := 200.0
 const JUMP_VELOCITY := -400.0
 const MAX_JUMP_COUNT: int = 2
 
-## Coins collected across all levels. 
-## Static means it should be present across all instances of the player.
+## Coins collected during the level
+## Static means it should be present across all instances of the player...
+## (but not across all scenes.)
 static var coins: int = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -31,10 +32,6 @@ var _juice: int = 0
 var _is_super := false
 
 @onready var animated_sprite = $AnimatedSprite as AnimatedSprite2D
-
-
-func _ready():
-	pass
 
 
 func _physics_process(delta: float) -> void:
