@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BoosterDB" load_steps=2 format=3 uid="uid://dgbomeqa4gsaj"]
+
+[sub_resource type="GDScript" id="GDScript_6i4qn"]
+resource_name = "boosterDB"
+script/source = "class_name BoosterDB
+extends Resource
+## Resource for storing Booster Food information to display in the Shop or GUI
+##
+## This resource holds onto all the data and methods used to manage items shown
+## in the shop. Information is stored in a simple dictionary (easier to find stuff
+## and comes with simple CRUD operations to start with)
+##
+## NOTE: This data isn't intended to be manipulated at run time.
+
+
+## The dictionary of Booster Foods.
+const DB := {}
+
+
+## initialize exports so it can be used in editor
+
+
+## func to add an item
+
+
+## func to remove an item
+
+
+## func to find and return an item
+
+
+## func to update an item - need the property being changed and the new value"
+
+[resource]
+script = SubResource("GDScript_6i4qn")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://br3ucckj8lmgp"]
+
+[ext_resource type="Script" path="res://components/stats_tools/booster.gd" id="1_lcruv"]
+
+[resource]
+resource_name = "booster_res"
+script = ExtResource("1_lcruv")

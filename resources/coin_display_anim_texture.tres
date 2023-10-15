@@ -1,0 +1,31 @@
+[gd_resource type="AnimatedTexture" load_steps=6 format=3 uid="uid://dcykmm3yegfdt"]
+
+[ext_resource type="Texture2D" uid="uid://cu6h23nn0y6dp" path="res://assets/Coin (16 x 16).png" id="1_gpbq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0q1f"]
+atlas = ExtResource("1_gpbq7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jr2f"]
+atlas = ExtResource("1_gpbq7")
+region = Rect2(19, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udtw2"]
+atlas = ExtResource("1_gpbq7")
+region = Rect2(38, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnswx"]
+atlas = ExtResource("1_gpbq7")
+region = Rect2(51, 0, 10, 16)
+
+[resource]
+resource_name = "coin_display_anim_texture"
+frames = 4
+frame_0/texture = SubResource("AtlasTexture_g0q1f")
+frame_0/duration = 0.25
+frame_1/texture = SubResource("AtlasTexture_0jr2f")
+frame_1/duration = 0.25
+frame_2/texture = SubResource("AtlasTexture_udtw2")
+frame_2/duration = 0.25
+frame_3/texture = SubResource("AtlasTexture_qnswx")
+frame_3/duration = 0.25
