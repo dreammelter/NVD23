@@ -17,7 +17,7 @@ shape = SubResource("CircleShape2D_ldjna")
 
 [node name="AnimatedSprite" parent="." index="1"]
 sprite_frames = ExtResource("2_5n5rx")
-animation = &"idle"
+animation = &"idle_shield"
 autoplay = "idle_shield"
 
 [node name="HitShape" type="CollisionShape2D" parent="HitBox" index="0"]

@@ -9,11 +9,18 @@ var _settings_scene_file := "res://screens/settings_screen.tscn"
 var _close_scene_file := "res://screens/title_screen.tscn"
 
 
-func _on_play_button_pressed():
+func _ready() -> void:
+	GameManager.in_game = false
+	GameManager.in_menu = true
+	if get_tree().paused:
+		get_tree().paused = false
+
+
+func _on_play_button_pressed() -> void:
 	GameManager.goto_scene(scene_file)
 
 
-func _on_shop_button_pressed():
+func _on_shop_button_pressed() -> void:
 	GameManager.goto_scene(_shop_scene_file)
 
 

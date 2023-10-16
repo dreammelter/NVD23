@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kilfc5f4nuw3" path="res://assets/pixel_adv_32x/Menu/Buttons/Back.png" id="4_wn5id"]
 
 [node name="PauseScreen" type="ColorRect"]
+process_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
