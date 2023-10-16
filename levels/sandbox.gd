@@ -27,3 +27,7 @@ func _ready() -> void:
 
 func _on_pause_menu_closed():
 	$HUDLayer.show()
+
+
+func _on_player_charged_juice_bar(juice):
+	$HUDLayer/HUD.update_juice_bar(juice)

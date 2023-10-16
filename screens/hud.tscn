@@ -54,7 +54,6 @@ grow_vertical = 0
 scale = Vector2(5, 5)
 size_flags_horizontal = 8
 size_flags_stretch_ratio = 3.0
-value = 50.0
 texture_under = SubResource("AtlasTexture_i7g60")
 texture_progress = SubResource("AtlasTexture_tlihn")
 texture_progress_offset = Vector2(1, 2)

@@ -10,6 +10,8 @@ signal direction_changed(direction: float)
 signal stat_changed(stat_name: String, stat_value: float)
 ## Emitted when the player encounters a collectible
 signal item_collected(item_type: String)
+## Emitted when the player collects fruit
+signal charged_juice_bar(juice: int)
 
 const SPEED := 200.0
 const JUMP_VELOCITY := -400.0
@@ -87,6 +89,8 @@ func hit(amount: int) -> bool:
 ## Return value indicates if stat is maxed
 func charge(amount: int) -> bool:
 	_juice += amount
+	charged_juice_bar.emit(_juice)
+	
 	if _juice > 100:
 		_juice = 100
 		return true
@@ -120,3 +124,4 @@ func _handle_collisions() -> void:
 #		if collider.is_in_group("enemies"):
 #			print("HELLO????")
 #			collider.hit()
+
