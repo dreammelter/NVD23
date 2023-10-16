@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy7u27i4juhay"]
+[gd_scene load_steps=4 format=3 uid="uid://dy7u27i4juhay"]
 
+[ext_resource type="Script" path="res://screens/scripts/coin_display.gd" id="1_p5srr"]
 [ext_resource type="Texture2D" uid="uid://cu6h23nn0y6dp" path="res://assets/Coin (16 x 16).png" id="1_r522j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu624"]
@@ -9,6 +10,7 @@ region = Rect2(0, 0, 16, 16)
 [node name="CoinDisplay" type="HBoxContainer"]
 offset_right = 165.0
 offset_bottom = 37.0
+script = ExtResource("1_p5srr")
 
 [node name="CoinIcon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(16, 16)

@@ -2,8 +2,8 @@ extends Node2D
 
 @export var testing: Resource
 
-@onready var pause_layer = $PauseLayer
-@onready var hud_layer = $HUDLayer
+@onready var pause_layer = $PauseLayer as CanvasLayer
+@onready var hud_layer = $HUDLayer as CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.

@@ -2,7 +2,6 @@ extends Node
 ## Autoloaded scene that handles scene transitions and game data.
 ## 
 ## Provides methods for switching scenes and saving/loading player's game data
-## Might to extend FSM for the structuring Game States but we'll see.
 
 
 ## current scene

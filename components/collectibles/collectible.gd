@@ -21,4 +21,5 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if item_type == "coin" and body.has_method("bank"):
 		body.bank(item_value) # gold coins net 10, silver 5
+		PlayerData.update_coins(item_value)
 		queue_free()
