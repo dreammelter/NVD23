@@ -5,10 +5,17 @@ extends Node
 ## I'll link the resources referenced for creating this later.
 
 # Finished signal for states that need to share that info
-signal finished(next_state)
+# signal finished(next_state)
+
+# Shorthands for easy access, type-checking, and hints
+@onready var fsm: StateMachine = get_parent()
+
+@onready var anims: AnimatedSprite2D = owner.find_child("AnimatedSprite")
+
+#var next_state: String
+
 
 # Methods for transitioning
-
 ## Enter the state (setup house)
 func enter() -> void:
 	pass

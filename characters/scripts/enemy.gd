@@ -3,6 +3,8 @@ extends CharacterBody2D
 ## Base Enemy class for easy creation and management.
 
 
+signal was_hit()
+
 ## Juice bar (which doubles as health)
 @export var juice: int = 0
 
@@ -13,18 +15,20 @@ extends CharacterBody2D
 @export var speed := 200.0
 @export var jump_velocity := -400.0
 
+## How long should the enemy wait until they wander around again?
+#@export var time_to_wander: float = 3.0
+
 ## Turn this off for enemies that float.
 @export var use_gravity := true
+## Turn this off for enemies that are stationary
+@export var can_move := true
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@onready var wander_timer = $TimeToWander
 
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor() and use_gravity:
-		velocity.y += gravity * delta
-
 	move_and_slide()
 #	_handle_collisons()
 
@@ -50,6 +54,16 @@ func charge(amount: int) -> bool:
 	return false
 
 
+## Return the wait time of TimeToWander
+func get_wander_time() -> float:
+	return wander_timer.wait_time
+
+
+## Start/Reset the timer
+func start_wander_timer() -> void:
+	wander_timer.start()
+
+
 ## Handle regular collisions - which... isn't consistently working rn.
 #func _handle_collisons() -> void:
 #	for i in get_slide_collision_count():
@@ -65,8 +79,3 @@ func _on_hit_box_body_entered(body):
 	prints("HITBOX encountered", body.name)
 	if body.name == "Player":
 		hit(damage_dealt)
-
-
-## Wandering method used for testing
-func _wander() -> void:
-	pass

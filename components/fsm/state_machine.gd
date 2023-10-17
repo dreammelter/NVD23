@@ -11,11 +11,13 @@ signal state_changed(state_name)
 ## Path to a State for the machine to start with
 @export var initial_state: NodePath
 
-@onready var current_state = get_node(initial_state)
+var current_state: State
 
 
 # Setup the State Machine
-func _enter_tree() -> void:
+#func _enter_tree() -> void:
+func _ready() -> void:
+	current_state = get_node(initial_state)
 	if current_state == null:
 		push_warning("hey-- you don't have a state")
 	current_state.enter()
@@ -45,10 +47,12 @@ func _on_animation_finished(anim) -> void:
 func initialize() -> void:
 	pass
 
+
 ## Transition to a new state
 func change_state(state_name: String) -> void:
 	## verify the state exists first
 	if not has_node(state_name):
+		prints(name, "doesn't have the", state_name, "state. Moving on.")
 		return
 	
 	current_state.exit()

@@ -12,13 +12,13 @@ func _ready():
 #		_set_text(button_pressed) # doesn't run...
 
 
-func _on_toggled(button_pressed):
-	_set_text(button_pressed)
-	GameManager.pause_BGM(button_pressed)
+func _on_toggled(status):
+	_set_text()
+	GameManager.pause_BGM(status)
 
 
 ## utility for setting the button text according to toggle status
-func _set_text(button_pressed):
+func _set_text():
 	if button_pressed:
 		text = "Off"
 	else:

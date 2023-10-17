@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://lmnxq62cee4x"]
+[gd_scene load_steps=6 format=3 uid="uid://lmnxq62cee4x"]
 
 [ext_resource type="PackedScene" uid="uid://dkvtkwk0egnv2" path="res://characters/enemy.tscn" id="1_uy3ws"]
 [ext_resource type="SpriteFrames" uid="uid://cvbnepfaeffco" path="res://resources/enemy_plant_sprite_frames.tres" id="2_28syg"]
+[ext_resource type="Script" path="res://components/fsm/state.gd" id="3_lk1o4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_430p7"]
 size = Vector2(28, 35)
@@ -24,3 +25,6 @@ animation = &"idle"
 position = Vector2(3, -6)
 shape = SubResource("RectangleShape2D_8ao8a")
 debug_color = Color(0.997589, 0.00548695, 0.146562, 0.42)
+
+[node name="Attack" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("3_lk1o4")

@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkvtkwk0egnv2"]
+[gd_scene load_steps=10 format=3 uid="uid://dkvtkwk0egnv2"]
 
 [ext_resource type="Script" path="res://characters/scripts/enemy.gd" id="1_jev7n"]
 [ext_resource type="Script" path="res://components/stats_tools/hit_box.gd" id="2_uq5v4"]
+[ext_resource type="Script" path="res://characters/scripts/EnemyStateMachine.gd" id="3_mlfht"]
+[ext_resource type="Script" path="res://components/fsm/state.gd" id="4_1os2u"]
+[ext_resource type="Script" path="res://characters/scripts/enemy_idle_state.gd" id="4_ohpoo"]
+[ext_resource type="Script" path="res://characters/scripts/enemy_air_state.gd" id="5_tspi1"]
+[ext_resource type="Script" path="res://characters/scripts/enemy_move_state.gd" id="6_ftssn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7f7d"]
 resource_local_to_scene = true
@@ -22,6 +27,10 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny6c6"]
+resource_name = "enemy_nearfield_shape"
+radius = 90.0
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 19
@@ -40,4 +49,32 @@ collision_layer = 4
 collision_mask = 19
 script = ExtResource("2_uq5v4")
 
+[node name="Nearfield" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nearfield"]
+shape = SubResource("CircleShape2D_ny6c6")
+debug_color = Color(0.643137, 0.509804, 0.34902, 0.419608)
+
+[node name="TimeToWander" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_mlfht")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_ohpoo")
+
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("5_tspi1")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("6_ftssn")
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = ExtResource("4_1os2u")
+
+[connection signal="was_hit" from="." to="StateMachine" method="_on_enemy_was_hit"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="Nearfield" to="StateMachine" method="_on_nearfield_body_entered"]
+[connection signal="timeout" from="TimeToWander" to="StateMachine" method="_on_time_to_wander_timeout"]
