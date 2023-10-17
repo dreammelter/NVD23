@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwtjk7vn0gytn"]
+
+[ext_resource type="Texture2D" uid="uid://dfjffnvhaxmlj" path="res://assets/fx/GrafxKid MiniFX/Yellow_Sparkle (16 x 16).png" id="1_16r7t"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ed4q2"]
+resource_name = "gold_glitter_canvas_mat"
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bq6e"]
+resource_name = "gold_glitter_mat"
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -20, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_max = 10.0
+angle_min = -15.0
+angle_max = 15.0
+hue_variation_max = 0.05
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_ed4q2")
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_6bq6e")
+texture = ExtResource("1_16r7t")
+lifetime = 3.0
