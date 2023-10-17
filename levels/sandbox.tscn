@@ -95,14 +95,16 @@ position = Vector2(-967, 125)
 collision_layer = 2
 collision_mask = 1
 use_gravity = false
+can_move = false
 
 [node name="EnemyPlant" parent="Enemies" instance=ExtResource("5_ovkd0")]
 position = Vector2(-179, 91)
 collision_layer = 2
 collision_mask = 1
+can_move = false
 
 [node name="EnemyChicken" parent="Enemies" instance=ExtResource("6_yj3sx")]
-position = Vector2(155, -81)
+position = Vector2(157, -81)
 collision_layer = 2
 collision_mask = 1
 
@@ -168,42 +170,42 @@ visible = false
 scene_file = "res://levels/sandbox.tscn"
 
 [connection signal="body_entered" from="Coins/CoinPath/Coin" to="Coins/CoinPath/Coin" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath/@Area2D@28938" to="Coins/CoinPath/@Area2D@28938" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath/@Area2D@28939" to="Coins/CoinPath/@Area2D@28939" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath/@Area2D@35984" to="Coins/CoinPath/@Area2D@35984" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath/@Area2D@35985" to="Coins/CoinPath/@Area2D@35985" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Coins/CoinPath2/Coin" to="Coins/CoinPath2/Coin" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28941" to="Coins/CoinPath2/@Area2D@28941" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28942" to="Coins/CoinPath2/@Area2D@28942" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28943" to="Coins/CoinPath2/@Area2D@28943" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28944" to="Coins/CoinPath2/@Area2D@28944" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28945" to="Coins/CoinPath2/@Area2D@28945" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28946" to="Coins/CoinPath2/@Area2D@28946" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28947" to="Coins/CoinPath2/@Area2D@28947" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28948" to="Coins/CoinPath2/@Area2D@28948" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@28949" to="Coins/CoinPath2/@Area2D@28949" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35987" to="Coins/CoinPath2/@Area2D@35987" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35988" to="Coins/CoinPath2/@Area2D@35988" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35989" to="Coins/CoinPath2/@Area2D@35989" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35990" to="Coins/CoinPath2/@Area2D@35990" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35991" to="Coins/CoinPath2/@Area2D@35991" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35992" to="Coins/CoinPath2/@Area2D@35992" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35993" to="Coins/CoinPath2/@Area2D@35993" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35994" to="Coins/CoinPath2/@Area2D@35994" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath2/@Area2D@35995" to="Coins/CoinPath2/@Area2D@35995" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Coins/CoinPath3/Coin" to="Coins/CoinPath3/Coin" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28951" to="Coins/CoinPath3/@Area2D@28951" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28952" to="Coins/CoinPath3/@Area2D@28952" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28953" to="Coins/CoinPath3/@Area2D@28953" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28954" to="Coins/CoinPath3/@Area2D@28954" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28955" to="Coins/CoinPath3/@Area2D@28955" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28956" to="Coins/CoinPath3/@Area2D@28956" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28957" to="Coins/CoinPath3/@Area2D@28957" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28958" to="Coins/CoinPath3/@Area2D@28958" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@28959" to="Coins/CoinPath3/@Area2D@28959" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@35997" to="Coins/CoinPath3/@Area2D@35997" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@35998" to="Coins/CoinPath3/@Area2D@35998" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@35999" to="Coins/CoinPath3/@Area2D@35999" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36000" to="Coins/CoinPath3/@Area2D@36000" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36001" to="Coins/CoinPath3/@Area2D@36001" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36002" to="Coins/CoinPath3/@Area2D@36002" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36003" to="Coins/CoinPath3/@Area2D@36003" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36004" to="Coins/CoinPath3/@Area2D@36004" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath3/@Area2D@36005" to="Coins/CoinPath3/@Area2D@36005" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Coins/CoinPath4/Coin" to="Coins/CoinPath4/Coin" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28961" to="Coins/CoinPath4/@Area2D@28961" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28962" to="Coins/CoinPath4/@Area2D@28962" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28963" to="Coins/CoinPath4/@Area2D@28963" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28964" to="Coins/CoinPath4/@Area2D@28964" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28965" to="Coins/CoinPath4/@Area2D@28965" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28966" to="Coins/CoinPath4/@Area2D@28966" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28967" to="Coins/CoinPath4/@Area2D@28967" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28968" to="Coins/CoinPath4/@Area2D@28968" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28969" to="Coins/CoinPath4/@Area2D@28969" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28970" to="Coins/CoinPath4/@Area2D@28970" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28971" to="Coins/CoinPath4/@Area2D@28971" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28972" to="Coins/CoinPath4/@Area2D@28972" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28973" to="Coins/CoinPath4/@Area2D@28973" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@28974" to="Coins/CoinPath4/@Area2D@28974" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36007" to="Coins/CoinPath4/@Area2D@36007" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36008" to="Coins/CoinPath4/@Area2D@36008" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36009" to="Coins/CoinPath4/@Area2D@36009" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36010" to="Coins/CoinPath4/@Area2D@36010" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36011" to="Coins/CoinPath4/@Area2D@36011" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36012" to="Coins/CoinPath4/@Area2D@36012" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36013" to="Coins/CoinPath4/@Area2D@36013" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36014" to="Coins/CoinPath4/@Area2D@36014" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36015" to="Coins/CoinPath4/@Area2D@36015" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36016" to="Coins/CoinPath4/@Area2D@36016" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36017" to="Coins/CoinPath4/@Area2D@36017" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36018" to="Coins/CoinPath4/@Area2D@36018" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36019" to="Coins/CoinPath4/@Area2D@36019" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Coins/CoinPath4/@Area2D@36020" to="Coins/CoinPath4/@Area2D@36020" method="_on_body_entered" flags=18]
 [connection signal="charged_juice_bar" from="Player" to="." method="_on_player_charged_juice_bar"]
 [connection signal="pause_menu_closed" from="PauseLayer/PauseScreen" to="." method="_on_pause_menu_closed"]

@@ -21,7 +21,7 @@ func physics_update(delta) -> void:
 
 
 func on_wander_timer_timeout():
-	# once the timer is up, wander around in the run state
+	# once the timer is up, wander around in the move state
 	fsm.change_state("Move")
 
 

@@ -20,12 +20,14 @@ func physics_update(delta) -> void:
 	# pick a direction to move in and go
 	var cointoss = randi_range(0,1)
 	var dir = -1 if cointoss == 0 else cointoss
-	o.velocity.x += o.speed * dir * delta
+	o.velocity.x += o.speed * dir
+	
+	o.move_and_slide()
 
 
 func on_wander_timer_timeout():
 	# once the timer is up, stop moving
-	fsm.change_state("idle")
+	fsm.change_state("Idle")
 
 
 func on_nearfield_body_entered(body):

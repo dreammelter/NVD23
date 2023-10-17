@@ -57,6 +57,7 @@ debug_color = Color(0.643137, 0.509804, 0.34902, 0.419608)
 
 [node name="TimeToWander" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_mlfht")
