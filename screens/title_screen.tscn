@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://corjxjsy051sa"]
+[gd_scene load_steps=6 format=3 uid="uid://corjxjsy051sa"]
 
 [ext_resource type="Script" path="res://screens/scripts/title.gd" id="1_gnu44"]
 [ext_resource type="Texture2D" uid="uid://cnayjd6ttx713" path="res://assets/pixel_adv_32x/Background/Gray.png" id="1_khacj"]
+[ext_resource type="PackedScene" uid="uid://hjp6sg8xwng8" path="res://screens/pieces/bgm_button.tscn" id="3_27xsr"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_dmipf"]
 action = &"start"
@@ -55,5 +56,10 @@ layout_mode = 2
 size_flags_vertical = 2
 shortcut = SubResource("Shortcut_y77up")
 text = "Press Start!"
+
+[node name="BGMButton" parent="." instance=ExtResource("3_27xsr")]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 90.0
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

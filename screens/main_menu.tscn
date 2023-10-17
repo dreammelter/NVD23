@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnnsgva2e5d6v"]
+[gd_scene load_steps=10 format=3 uid="uid://dnnsgva2e5d6v"]
 
 [ext_resource type="Texture2D" uid="uid://babh0j8wnqp24" path="res://assets/pixel_adv_32x/Background/Blue.png" id="1_chpjj"]
 [ext_resource type="Script" path="res://screens/scripts/main_menu.gd" id="2_1mtxi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2sixm0lism7f" path="res://screens/pieces/play_button.tscn" id="5_c3uo7"]
 [ext_resource type="PackedScene" uid="uid://b6cit5d5svgy1" path="res://screens/pieces/shop_button.tscn" id="6_k1n52"]
 [ext_resource type="PackedScene" uid="uid://dk22ecgbvbckw" path="res://screens/pieces/settings_button.tscn" id="6_riat7"]
+[ext_resource type="PackedScene" uid="uid://hjp6sg8xwng8" path="res://screens/pieces/bgm_button.tscn" id="9_3bx1r"]
 
 [node name="MainMenu" type="TextureRect"]
 self_modulate = Color(0.592157, 0.839216, 1, 1)
@@ -76,6 +77,11 @@ size_flags_vertical = 3
 [node name="SettingsButton" parent="VBoxContainer" instance=ExtResource("6_riat7")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="BGMButton" parent="." instance=ExtResource("9_3bx1r")]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 90.0
 
 [connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

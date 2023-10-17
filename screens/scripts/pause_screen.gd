@@ -15,8 +15,8 @@ var _exit_scene_file := "res://screens/main_menu.tscn"
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("start"):
-		print("Event captured!")
-		_on_close_button_pressed() # not running for whatever reason
+		print("PAUSE: Action event captured! (start)")
+		_on_close_button_pressed() # still not running for whatever reason
 
 
 func _on_close_button_pressed() -> void:

@@ -14,10 +14,25 @@ var in_game := false
 ## True by default since the game starts with a menu screen
 var in_menu := true
 
+## Used to track status of BGM - true by default since it's set to autoplay
+var _BGM_playing: bool
+
 
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() -1)
+	_BGM_playing = ($BGM as AudioStreamPlayer).stream_paused
+
+
+# General Use methods
+## Pause the Background Music according to its toggled status
+func pause_BGM(button_pressed: bool) -> void:
+	($BGM as AudioStreamPlayer).stream_paused = button_pressed
+	_BGM_playing = button_pressed
+	
+## Check if BGM is playing
+func is_playing_BGM() -> bool:
+	return _BGM_playing
 
 
 # Methods to handle scene transitions using Resource Paths

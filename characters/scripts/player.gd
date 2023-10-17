@@ -34,13 +34,15 @@ var _juice: int = 0
 var _is_super := false
 
 @onready var animated_sprite = $AnimatedSprite as AnimatedSprite2D
+@onready var dust = $dust
 
-
+# Handle movement and collisions
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
 #		print("PLAYER is in air")
 		velocity.y += gravity * delta
+		dust.emitting = false
 		# play falling animation
 		if animated_sprite.animation == "dbl_jump" and not animated_sprite.is_playing():
 			print("PLAYER is falling")
@@ -48,6 +50,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		# reset jump count when we land on the ground
 		_jump_count = 0
+		
+		# fiddle with the dust FX
+		if animated_sprite.animation == "run":
+			dust.emitting = true
+		if animated_sprite.animation == "idle":
+			dust.emitting = false
 
 	# Handle Jumping.
 	if Input.is_action_just_pressed("jump") and (_jump_count < MAX_JUMP_COUNT):
@@ -106,8 +114,10 @@ func bank(amount: int) -> void:
 func _change_anim_direction(direction: float) -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
+		dust.position = Vector2(-18,8)
 	else:
 		animated_sprite.flip_h = true
+		dust.position = Vector2(18,8)
 	
 	emit_signal("direction_changed", direction)
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwrt8y3r6lwga"]
+[gd_scene load_steps=6 format=3 uid="uid://dwrt8y3r6lwga"]
 
 [ext_resource type="Texture2D" uid="uid://btwikdaao6fh2" path="res://assets/pixel_adv_32x/Background/Green.png" id="1_ao2qw"]
 [ext_resource type="Script" path="res://screens/scripts/shop_screen.gd" id="2_jnij2"]
 [ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="2_phv20"]
 [ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="2_rk8eo"]
+[ext_resource type="PackedScene" uid="uid://hjp6sg8xwng8" path="res://screens/pieces/bgm_button.tscn" id="5_3jfl6"]
 
 [node name="ShopScreen" type="TextureRect"]
 anchors_preset = 15
@@ -55,5 +56,10 @@ offset_bottom = 62.0
 layout_mode = 1
 offset_left = -53.0
 offset_right = -13.0
+
+[node name="BGMButton" parent="." instance=ExtResource("5_3jfl6")]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 90.0
 
 [connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

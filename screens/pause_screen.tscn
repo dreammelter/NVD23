@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnf80hgfdkwu0"]
+[gd_scene load_steps=7 format=3 uid="uid://cnf80hgfdkwu0"]
 
 [ext_resource type="Script" path="res://screens/scripts/pause_screen.gd" id="1_3ioud"]
 [ext_resource type="PackedScene" uid="uid://dnlbnnrgxi4sp" path="res://screens/pieces/close_button.tscn" id="1_wstgx"]
 [ext_resource type="PackedScene" uid="uid://dy7u27i4juhay" path="res://screens/pieces/coin_display.tscn" id="2_u11rh"]
+[ext_resource type="PackedScene" uid="uid://hjp6sg8xwng8" path="res://screens/pieces/bgm_button.tscn" id="2_u54o6"]
 [ext_resource type="PackedScene" uid="uid://dk22ecgbvbckw" path="res://screens/pieces/settings_button.tscn" id="3_n0lsx"]
 [ext_resource type="Texture2D" uid="uid://kilfc5f4nuw3" path="res://assets/pixel_adv_32x/Menu/Buttons/Back.png" id="4_wn5id"]
 
@@ -36,10 +37,14 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="BGMButton" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_u54o6")]
+layout_mode = 2
+flat = true
+
 [node name="CoinDisplay" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_u11rh")]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 9.0
+size_flags_stretch_ratio = 5.0
 alignment = 1
 
 [node name="close_button" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wstgx")]

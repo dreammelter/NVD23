@@ -11,4 +11,9 @@ debug_color = Color(0, 1, 0.352941, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
+[node name="CollectibleJingle" type="AudioStreamPlayer" parent="."]
+max_polyphony = 3
+bus = &"SFX"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="CollectibleJingle" to="." method="_on_collectible_jingle_finished"]

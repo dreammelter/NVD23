@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds84qxkphasfw"]
+[gd_scene load_steps=8 format=3 uid="uid://ds84qxkphasfw"]
 
 [ext_resource type="Script" path="res://characters/scripts/player.gd" id="1_lokrl"]
 [ext_resource type="SpriteFrames" uid="uid://c43u1y0kp5uyw" path="res://resources/player_sprite_frames.tres" id="2_s2pa3"]
 [ext_resource type="PackedScene" uid="uid://bwytxnuxk7tei" path="res://components/block_breaker/cannon_point.tscn" id="3_t1t3n"]
 [ext_resource type="Script" path="res://components/stats_tools/hit_box.gd" id="4_etsfa"]
+[ext_resource type="PackedScene" uid="uid://b7gy2dsgcdy0b" path="res://effects/dust_mini.tscn" id="5_qnj73"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yvg7s"]
 height = 32.0
@@ -33,8 +34,13 @@ visible = false
 [node name="HitBox" type="Area2D" parent="."]
 visible = false
 script = ExtResource("4_etsfa")
+metadata/_edit_lock_ = true
 
 [node name="HitShape" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_pb234")
 debug_color = Color(0, 1, 0.701961, 0.419608)
+
+[node name="dust" parent="." instance=ExtResource("5_qnj73")]
+position = Vector2(-18, 8)
+emitting = false
